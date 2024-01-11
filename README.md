@@ -1,6 +1,6 @@
 ### Calculadora
 ---
-Este es un proyecto que hice para poner en práctica: HTML, CSS y JavaScript.
+Este es un proyecto para poner en práctica:
 <ul>
 <li>HTML</li>
 <li>CSS</li>
