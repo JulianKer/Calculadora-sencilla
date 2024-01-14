@@ -5,7 +5,7 @@ let resultado = 0;
 
 teclas.forEach(tecla =>{
     tecla.addEventListener("click", ()=>{
-        if (displayResultado.textContent == 0) {
+        if (displayResultado.textContent == 0 || displayResultado.textContent == "Error") {
             displayResultado.textContent = "";
         }
 
@@ -37,5 +37,14 @@ function corroborarQueElCampoNoEsteVacio(){
 
 function realizarOperacion(){
     resultado = displayResultado.textContent.replace("x","*");
-    displayResultado.textContent = eval(resultado);
+
+    try {
+        if (!isNaN(eval(resultado))) {
+            displayResultado.textContent = eval(resultado);
+        }else{
+            throw new Error("ERROR")
+        }
+    } catch (error) {
+        displayResultado.textContent = "Error";
+    }
 }
